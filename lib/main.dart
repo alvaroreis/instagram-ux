@@ -17,6 +17,13 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.dark,
       darkTheme: ThemeData(
         brightness: Brightness.dark,
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          landscapeLayout: BottomNavigationBarLandscapeLayout.linear,
+          backgroundColor: Colors.black,
+          enableFeedback: false,
+          unselectedIconTheme: IconThemeData(color: Colors.white),
+          selectedIconTheme: IconThemeData(color: Colors.white),
+        ),
         iconTheme: const IconThemeData(color: Colors.white),
         scaffoldBackgroundColor: Colors.black,
       ),
