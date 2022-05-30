@@ -27,9 +27,11 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  # fluttericon: ^2.0.0
+  fluttericon: ^2.0.0
   # flutter_icons: ^1.1.0
-  iconify_flutter: ^0.0.4
+  # iconify_flutter: ^0.0.4
+  flutter_phosphor_icons: ^0.0.1+6
+  expandable: ^5.0.1
   flutter:
     sdk: flutter
 

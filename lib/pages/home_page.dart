@@ -1,12 +1,11 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:iconify_flutter/iconify_flutter.dart';
-import 'package:iconify_flutter/icons/ph.dart';
-import 'package:iconify_flutter/icons/uil.dart';
+import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
+import 'package:fluttericon/font_awesome_icons.dart';
 
-import 'package:ui_instagram_clone/models/user_model.dart';
-import 'package:ui_instagram_clone/pages/widgets/story_widget.dart';
+import '/models/user_model.dart';
+import '/pages/widgets/story_widget.dart';
+import 'widgets/icon_button_custom_widget.dart';
+import 'widgets/post_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -54,26 +53,22 @@ class HomePage extends StatelessWidget {
     ];
 
     List<Widget>? actions = [
-      IconButton(
+      IconButtonCustomWidget(
         onPressed: () {},
-        icon: const Iconify(
-          Uil.plus_square,
-          color: Colors.white,
+        icon: const Icon(
+          FontAwesome.plus_squared_alt,
         ), // widget,
       ),
-      IconButton(
+      IconButtonCustomWidget(
         onPressed: () {},
-        icon: const Iconify(
-          Ph.heart_bold,
-          color: Colors.white,
+        icon: const Icon(
+          PhosphorIcons.heart,
         ),
       ),
-      IconButton(
+      IconButtonCustomWidget(
         onPressed: () {},
-        color: Colors.white,
-        icon: const Iconify(
-          Ph.messenger_logo_bold,
-          color: Colors.white,
+        icon: const Icon(
+          PhosphorIcons.messenger_logo,
         ),
       ),
     ];
@@ -91,35 +86,33 @@ class HomePage extends StatelessWidget {
         ),
         actions: actions,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: 120,
-              child: ListView.builder(
-                physics: const BouncingScrollPhysics(),
-                scrollDirection: Axis.horizontal,
-                shrinkWrap: true,
-                itemCount: users.length,
-                itemBuilder: (context, index) => StoryWidget(
-                  user: users[index],
-                  isStoryProfile: users[index].loggedIn,
-                ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          SizedBox(
+            height: 120,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              shrinkWrap: true,
+              itemCount: users.length,
+              itemBuilder: (context, index) => StoryWidget(
+                user: users[index],
+                isStoryProfile: users[index].loggedIn,
               ),
             ),
-            const SizedBox(
-              height: 10,
-            ),
-            AspectRatio(
-              aspectRatio: 1.1,
-              child: Container(
-                color: Colors.white,
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: users.length,
+              itemBuilder: (_, index) => PostWidget(
+                user: users[index],
               ),
-            )
-          ],
-        ),
+            ),
+          ),
+        ],
       ),
     );
   }
