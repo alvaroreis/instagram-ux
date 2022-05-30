@@ -32,7 +32,7 @@ Aplicação simples criada com o intuito de colocar em prática os widgets do fl
 
 <h2>Screenshots</h2>
 
-<img src="https://github.com/alvaroreis/ui_instagram_clone/blob/main/screenshot/code1.png" width="400">
+<img src="https://github.com/alvaroreis/ui_instagram_clone/blob/main/screenshot/code1.png" height="600">
 
 <br />
 
@@ -75,8 +75,6 @@ Depois abra a pasta backend do projeto no terminal e digite o seguinte comnndo
 
 </br>
 -->
-
-<br />
 <h3 align="center">👇Dúvida, Crítica, Elogio ou Sugestão</h3>
 <p align="center">
   <a href="https://linkedin.com/in/reisalvaro" target="blank"
@@ -95,14 +93,14 @@ Depois abra a pasta backend do projeto no terminal e digite o seguinte comnndo
       height="30"
       style="margin-top: 5px;max-width: 100%;"
   /></a>
-  <a href="https://discord.gg/LUIZ#4547" target="blank"
+ <!-- <a href="https://discord.gg/LUIZ#4547" target="blank"
     ><img
       align="center"
       src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white"
       alt="LUIZ#4547"
       height="30"
       style="margin-top: 5px;max-width: 100%;"
-  /></a>
+  /></a> -->
 </p>
 
 <!-- <p align="center">Nossa maior fraqueza é desistir. O caminho mais certo para o sucesso é sempre tentar apenas uma vez mais.
