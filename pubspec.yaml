@@ -28,6 +28,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   fluttericon: ^2.0.0
+  iconly: ^1.0.1
   # flutter_icons: ^1.1.0
   # iconify_flutter: ^0.0.4
   flutter_phosphor_icons: ^0.0.1+6
