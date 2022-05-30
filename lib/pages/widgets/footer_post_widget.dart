@@ -29,20 +29,48 @@ class _FooterPostWidgetState extends State<FooterPostWidget> {
       title: Row(
         children: [
           IconButtonCustomWidget(
-            onPressed: () {},
+            onPressed: () {
+              ScaffoldMessenger.of(context).clearSnackBars();
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text("Clicou no like"),
+                ),
+              );
+            },
             icon: const Icon(PhosphorIcons.heart),
           ),
           IconButtonCustomWidget(
-            onPressed: () {},
+            onPressed: () {
+              ScaffoldMessenger.of(context).clearSnackBars();
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text("Clicou nos comentários"),
+                ),
+              );
+            },
             icon: const Icon(PhosphorIcons.chat_circle),
           ),
           IconButtonCustomWidget(
-            onPressed: () {},
+            onPressed: () {
+              ScaffoldMessenger.of(context).clearSnackBars();
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text("Clicou no compartilhar"),
+                ),
+              );
+            },
             icon: const Icon(PhosphorIcons.paper_plane_tilt),
           ),
           const Spacer(),
           IconButtonCustomWidget(
-            onPressed: () {},
+            onPressed: () {
+              ScaffoldMessenger.of(context).clearSnackBars();
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text("Clicou no marcador"),
+                ),
+              );
+            },
             icon: const Icon(PhosphorIcons.bookmark_simple),
           )
         ],
@@ -116,6 +144,26 @@ class _FooterPostWidgetState extends State<FooterPostWidget> {
                       ],
                     ),
                   ),
+            Visibility(
+              visible: widget.user.comments > 0,
+              child: InkWell(
+                onTap: () {
+                  ScaffoldMessenger.of(context).clearSnackBars();
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text("Clicou nos comentários"),
+                    ),
+                  );
+                },
+                child: Text(
+                  'Ver todos os ${widget.user.comments} comentários',
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyMedium
+                      ?.copyWith(color: Colors.grey),
+                ),
+              ),
+            )
           ],
         ),
       ),
